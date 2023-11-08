@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar";
 import { useState } from "react";
 
 export default function Home() {
@@ -5,9 +6,8 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Hello {counter}</h1>
-      <button onClick={() => setCounter((prev) => prev + 1)}>+</button>
-      <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
+      <NavBar />
+      <h1>Hello</h1>
     </div>
   );
 }
