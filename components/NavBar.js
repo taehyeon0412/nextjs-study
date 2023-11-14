@@ -37,7 +37,7 @@ export default function NavBar() {
         }
 
         .active {
-          color: tomato;
+          color: blue;
         }
 
         nav div {

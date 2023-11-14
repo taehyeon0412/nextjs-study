@@ -8,7 +8,7 @@ export default function Home({ results }) {
 
       {results?.map((movie) => (
         <div className="movie" key={movie.id}>
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <h4>{movie.original_title}</h4>
         </div>
       ))}
@@ -19,6 +19,9 @@ export default function Home({ results }) {
           grid-template-columns: 1fr 1fr;
           padding: 20px;
           gap: 20px;
+        }
+        .movie {
+          cursor: pointer;
         }
         .movie img {
           max-width: 100%;
@@ -50,6 +53,6 @@ export async function getServerSideProps() {
   };
 }
 
-//getServerSideProps에 쓰면 절대로 client에게 보여지지 않음
+//getServerSideProps에 쓰면 서버처리가 완료되기 전까지 client에게 보여지지 않음
 //백엔드(서버)에서만 실행됨
 //무엇을 리턴하던지 이걸 props로써 page에게 주게됨 ->Home({results})
